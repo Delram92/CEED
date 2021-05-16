@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <title>Costo metro cuadrado casa</title>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <a class="navbar-brand" href="#"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <a class="navbar-brand" href="/"></a>
+      </nav>
+      <center>
+         <h3 class="my-3 py-2">
+            Valores
+         </h3>
+         <div class="contianer">
+            <form action="{{ url_for('predict')}}"method="post">
+               <h4 class="my-2 py-1"><b>Carácteristicas</b> </h4>
+               <!--OB_FORMAL-->
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="1">Cuenta con licencia de construccion?
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                        <select class="custom-select d-block w-100" id="1" name='1' required="">
+                           <option value="">Elegir...</option>
+                           <option value=1>Sí</option>
+                           <option value=2>No</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <!--fin OB_FORMAL-->
+               <!--AMPLIACION-->
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="2">Cuenta con ampliacion de metros cuadrados?
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                        <select class="custom-select d-block w-100" id="2" name='2' required="">
+                           <option value="">Elegir...</option>
+                           <option value=1>Sí</option>
+                           <option value=2>No</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <!--fin AMPLIACION-->
+               
+                 <!--ESTADO_ACT-->
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="3">Estado Actual
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                        <select class="custom-select d-block w-100" id="3" name='3' required="">
+                           
+    						<option value="">Elegir...</option>
+    						<option value=1>Proceso</option>
+    						<option value=2>Paralizada con información completa</option>
+    						<option value=3>Culminada Completa</option>
+    						<option value=4>Paralizada incompleta</option>
+    						<option value=5>Culminada con información incompleta</option>
+    						<option value=6>Demolida</option>	
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <!--fin ESTADO_ACT-->
+               
+               <!--Estrato-->
+               
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="4">Estrato
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                        <select class="custom-select d-block w-100" id="4" name='4' required="">
+
+    						<option value="">Elegir...</option>
+    						<option value=1>1- Bajo Bajo</option>
+    						<option value=2>2- Bajo</option>
+    						<option value=3>3- Medio Bajo</option>
+    						<option value=4>4- Medio</option>
+    						<option value=5>5- Medio Alto</option>
+    						<option value=6>6- Alto</option>	
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <!--fin Estrato-->     
+               
+               <!--USO-->
+               
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="5">Inmueble para venta ?
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                        <select class="custom-select d-block w-100" id="5" name='5' required="">
+
+    						<option value="">Elegir...</option>
+    						<option value=1>Sí</option>
+    						<option value=2>No</option>
+	
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <!--fin USO-->   
+               
+               <!--ANOINICIO-->
+               
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="6">Año inicio de construccion
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                      <input type="number" step="any" class="form-control" id="6" placeholder=""
+								name="6" value="" required="">
+	
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <!--fin ANOINICIO-->     
+
+               <!--AREATOTZC-->
+               
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="7">Área total de zonas comunes
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                      <input type="number" step="any" class="form-control" id="7" placeholder=""
+								name="inf_time" value="" required="">
+	
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <!--fin AREATOTZC-->    
+                                    
+                <!--UNIDADESGA-->
+               
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="8">Número de unidades de garaje
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                      <input type="number" step="any" class="form-control" id="8" placeholder=""
+								name="8" value="" required="">
+	
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <!--fin UNIDADESGA--> 
+  
+               <!--PRECIOUNIG-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="9">Precio Metro cudrado de unidades de garaje
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                      <input type="number" step="any" class="form-control" id="9" placeholder=""
+								name="9" value="" required="">
+	
+                       
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin PRECIOUNIG--> 
+               <!--TIPOVALOR-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="10">Tipo de valor de garaje cubierto
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                        <select class="custom-select d-block w-100" id="10" name='10' required="">
+
+    						<option value="">Elegir...</option>
+    						<option value=1>Real</option>
+    						<option value=2>Cubierto</option>
+	
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin TIPOVALOR-->      
+               <!--SIS_CONSTR-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="11">Método contractivo estructural
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+                        <select class="custom-select d-block w-100" id="11" name='11' required="">
+
+    						<option value="">Elegir...</option>
+    						<option value=1>Mampostería estructural</option>
+    						<option value=2>Mampostería confinada-pórticos </option>
+    						<option value=3>Prefabricados industrializados</option>
+    						<option value=4>Otros</option>
+    						
+	
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin SIS_CONSTR-->  
+
+               <!--MANO_OBRAP-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="12">Cantidad de mano de obra por tipo
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="12" placeholder=""
+								name="12" value="" required="">
+    				
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin MANO_OBRAP-->  
+                              
+               <!--MANO_OBRAT-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="13">Cantidad de mano de obra temporal
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="13" placeholder=""
+								name="13" value="" required="">
+    						
+	
+                     </div>
+                  </div>
+               </div>
+               <!--AREA_LOTE-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="14">Área del terreno Construcción.
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="14" placeholder=""
+								name="14" value="" required="">
+    						
+	
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin AREA_LOTE-->         
+               
+               <!--AREAVENDIB-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="15">Área Total Vendible
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="15" placeholder=""
+								name="15" value="" required="">
+    						
+	
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin AREAVENDIB-->      
+               <!--NUMUNIDEST-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="16">Cantidad unidades destino
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="16" placeholder=""
+								name="16" value="" required="">
+    				
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin NUMUNIDEST-->      
+                                                                  
+                <!--NUMUNIVEN-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="17">Cantidad unidades vendidas
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="17" placeholder=""
+								name="17" value="" required="">
+    						
+	
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin NUMUNIVEN-->   
+
+
+                <!--NUMUNIXVEN-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="18">Cantidad unidades por vender
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="18" placeholder=""
+								name="18" value="" required="">
+    				
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin NUMUNIXVEN-->   
+
+
+                <!--NRO_EDIFIC-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="19">Número edificaciones en construccion
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="19" placeholder=""
+								name="19" value="" required="">
+    				
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin NRO_EDIFIC-->   
+               
+                <!--NRO_PISOS-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="20">Número de pisos
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="20" placeholder=""
+								name="20" value="" required="">
+    						
+	
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin NRO_PISOS-->                  
+
+               <!--TIPOVRDEST-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="21">Tipo de valor del metro cuadrado
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="21" placeholder=""
+								name="21" value="" required="">
+    						
+	
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin TIPOVRDEST-->    
+               
+                              
+                <!--AREATOTCO2-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="22">Area total construida (m2)
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="22" placeholder=""
+								name="22" value="" required="">
+    						
+	
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin AREATOTCO2-->                              
+
+                <!--AREAVENUNI-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="23">Area total vendible (m2)
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+
+                      <input type="number" step="any" class="form-control" id="23" placeholder=""
+								name="23" value="" required="">
+    						
+	
+                     
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin AREAVENUNI-->  
+                <!--TIPOVIVI-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="24">Tipo de vivienda
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+    <select class="custom-select d-block w-100" id="24" name='24' required="">
+
+    						<option value="">Elegir...</option>
+    						<option value=1>Vivienda de interés social</option>
+    						<option value=2>Vivienda diferente de VIS</option>
+    	
+	</select >
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin TIPOVIVI-->                 
+     
+     
+                     <!--RANVIVI-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="25">Rango de vivienda
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+    <select class="custom-select d-block w-100" id="25" name='25' required="">
+
+    						<option value="">Elegir...</option>
+    						<option value=1>1 y  50 SMLMV </option>
+    						<option value=2>50 hasta 70 SMLMV </option>
+                        	<option value=3>70 hasta 100 SMLMV</option>
+                        	<option value=4>100 hasta 135 SMLMV </option>	
+                        	<option value=5>135 hasta 350 SMLMV  </option>	
+                        	<option value=6> mas de 351 SMLMV  </option>	                        	
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin RANVIVI-->    
+ 
+                     <!--Destino2-->
+               
+              <div class="container">
+                  <div class="row">
+                     <div class="col-md-4 mb-1 ">
+                        <label for="26">Uso de vivienda - Tipo
+                        </label>
+                     </div>
+                     <div class="col-md-3 mb-1 ">
+    <select class="custom-select d-block w-100" id="26" name='26' required="">
+
+    						<option value="">Elegir...</option>
+    						<option value=1>Apartamento</option>
+    						<option value=2>Oficinas </option>
+                        	<option value=3>Comercio </option>
+                        	<option value=4>Casas  </option>	
+                        	<option value=5>Bodegas</option>	
+                        	<option value=6>Destinos no comercializables</option>	                        	
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               
+               <!--fin Destino2-->    
+               
+                               
+                                                                        
+               <!-- Main Input For Receiving Query to our ML -->
+               <div class="container">
+                  <h2></h2>
+                  <button type="submit" class="btn btn-success">Predecir</button>
+               </div>
+            </form>
+         </div>
+      </center>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+         crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+         crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+         crossorigin="anonymous"></script>
+   </body>
+</html>
